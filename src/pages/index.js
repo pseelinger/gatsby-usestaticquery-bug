@@ -1,5 +1,6 @@
 import * as React from "react"
-import {graphql, useStaticQuery} from "gatsby";
+import TestComponent from "../components/test-component";
+import TestComponentWithHook from "../components/test-component-with-hook";
 
 const pageStyles = {
   color: "#232129",
@@ -126,19 +127,8 @@ const links = [
 
 const IndexPage = () => {
 
-  const { site: { siteMetadata: { title } } } =  useStaticQuery(graphql`
-    query MetadataQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <main style={pageStyles}>
-      <h1>The title of this site is {title}</h1>
       <h1 style={headingStyles}>
         Congratulations
         <br />
